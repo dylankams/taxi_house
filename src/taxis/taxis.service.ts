@@ -5,14 +5,15 @@ import { DriverRepository } from '../drivers/driver.repository'; // Importez Dri
 import { Taxi } from './entities/taxi.entity';
 import { CreateTaxiDto } from './dto/create-taxi.dto';
 import { UpdateTaxiDto } from './dto/update-taxi.dto'; // Importez le DTO de mise à jour
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class TaxisService {
   private readonly logger = new Logger(TaxisService.name);
 
   constructor(
-    @InjectRepository(TaxiRepository)
-    private taxiRepository: TaxiRepository, // Injectez TaxiRepository
+    @InjectRepository(Taxi)
+    private taxiRepository: Repository<Taxi>, // Injectez TaxiRepository
     @InjectRepository(DriverRepository)
     private driverRepository: DriverRepository // Injectez DriverRepository
   ) {}

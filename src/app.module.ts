@@ -22,11 +22,11 @@ import { ProblemsModule} from './problems/problems.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'mysql-dylantest.alwaysdata.net',
+      host: 'localhost',
       port: 3306,
-      username: 'dylantest',
-      password: '4}wrg4wN}Q.t',
-      database: 'dylantest_taxihouse',
+      username: 'root',
+      password: '',
+      database: 'taxiapp',
       entities: [User, Role, Driver, Taxi, Breakdown, Problem],
       synchronize: true,
     }),
